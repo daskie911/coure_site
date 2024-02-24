@@ -12,7 +12,26 @@ let data = fs.readFileSync("db.json");
 let parseData = JSON.parse(data);
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("home");
+});
+
+app.get("/users", (req, res) => {
+  res.render("users", { users: parseData });
+});
+
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+app.post("/login", (req, res) => {
+  let { email, password } = req.body;
+  for (let user of parseData.users) {
+    if (user.email === email && user.password === password) {
+      console.log("User exists");
+      res.redirect("/users");
+      return;
+    }
+  }
 });
 
 app.get("/register", (req, res) => {
@@ -32,7 +51,7 @@ app.post("/register", (req, res) => {
   let userExists = false;
 
   for (let user of parseData.users) {
-    if (user.email === email && user.password === password) {
+    if (user.email === email) {
       userExists = true;
       break;
     }
@@ -45,7 +64,6 @@ app.post("/register", (req, res) => {
     res.render("User does not exist");
     parseData.users.push({ email, password });
     fs.writeFileSync("db.json", JSON.stringify(parseData, null, 2));
-    res.redirect("/");
   }
 });
 

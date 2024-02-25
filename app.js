@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/users", (req, res) => {
-  res.render("users", { users: parseData });
+  res.render("users", { users: data});
 });
 
 app.get("/login", (req, res) => {
@@ -46,7 +46,7 @@ app.post("/register", (req, res) => {
   console.log(parseData);
 
   if (password !== password2) {
-    res.render("Passwords do not match!");
+    res.render("reg");
     return;
   }
 

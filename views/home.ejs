@@ -5,13 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/assets/home.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      #video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+      }
+    </style>
   </head>
   <body>
+    <video id="video-background" autoplay loop>
+      <source src="sea_-_33194 (1080p).mp4" type="video/mp4" />
+    </video>
     <header>
       <h1>HOME PAGE</h1>
       <h3>DARKNET</h3>
       <a href="/login">login</a>
       <a href="/register">register</a>
     </header>
+    <main>
+      <nav>
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </main>
   </body>
 </html>

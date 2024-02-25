@@ -3,11 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/assets/login.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      #video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+      }
+    </style>
   </head>
   <body>
-    <h1>HAHAHAHHAAHA</h1>
+    <video id="video-background" autoplay loop>
+      <source src="sea_-_33194 (1080p).mp4" type="video/mp4" />
+    </video>
+    <h1>Login</h1>
     <div class="container">
       <form action="/login" method="post">
         <input type="email" name="email" placeholder="Email" />

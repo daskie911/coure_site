@@ -30,6 +30,8 @@ app.post("/login", (req, res) => {
       console.log("User exists");
       res.redirect("/users");
       return;
+    } else {
+      res.render("User does not exist");
     }
   }
 });

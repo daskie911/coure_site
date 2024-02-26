@@ -32,8 +32,6 @@
       <h3>DARKNET</h3>
       <a href="/login">login</a>
       <a href="/register">register</a>
-    </header>
-    <main>
       <nav>
         <ul>
           <li><a href="/home">Home</a></li>
@@ -41,6 +39,25 @@
           <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
+    </header>
+    <main>
+      <%if (alert.type.length > 0) { %>
+      <div class="container">
+        <div class="alert alert-<%=alert.type %> alert-dismissible">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            onclick="this.parentElement.style.display='none';"
+          >
+            &times;
+          </button>
+          <div class="text-center">
+            <strong>Message:</strong> <%=alert.message %>
+          </div>
+        </div>
+      </div>
+      <%}%>
     </main>
   </body>
 </html>

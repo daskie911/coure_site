@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/users", (req, res) => {
-  res.render("users", { users: data});
+  res.render("users", { users: data });
 });
 
 app.get("/login", (req, res) => {
@@ -31,7 +31,8 @@ app.post("/login", (req, res) => {
       res.redirect("/users");
       return;
     } else {
-      res.render("User does not exist");
+      console.log("User does not exist");
+      res.redirect("/login");
     }
   }
 });
@@ -60,10 +61,9 @@ app.post("/register", (req, res) => {
   }
 
   if (userExists) {
-    res.render("User already exists!");
+    res.send("User already exists!");
     res.redirect("/");
   } else {
-    res.render("User does not exist");
     parseData.users.push({ email, password });
     fs.writeFileSync("db.json", JSON.stringify(parseData, null, 2));
   }

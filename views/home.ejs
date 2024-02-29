@@ -41,9 +41,9 @@
       </nav>
     </header>
     <main>
-      <%if (alert.type.length > 0) %>
+      <% if (alert.type.length > 0) { %>
       <div class="container">
-        <div class="alert alert-<%=alert.type %> alert-dismissible">
+        <div class="alert alert-<%= alert.type %> alert-dismissible">
           <button
             type="button"
             class="close"
@@ -53,10 +53,14 @@
             &times;
           </button>
           <div class="text-center">
-            <strong>Message:</strong> <%=alert.message %>
+            <strong>Message:</strong> <%= alert.message %>
           </div>
         </div>
       </div>
+      <% } %>
     </main>
+    <footer>
+      <p>&copy; 2024 Darknet</p>
+    </footer>
   </body>
 </html>

@@ -7,9 +7,9 @@ let alert = {
 };
 
 app.get("/", (req, res) => {
-  res.render("home", { alert });
   alert.message = "";
   alert.type = "";
+  res.render("home", { alert });
 });
 
 module.exports = app;

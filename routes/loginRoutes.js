@@ -7,9 +7,9 @@ let alert = {
 };
 
 router.get("/", (_, res) => {
-  res.render("login");
   alert.message = "";
   alert.type = "";
+  res.render("login", { alert });
 });
 
 router.post("/", (req, res) => {

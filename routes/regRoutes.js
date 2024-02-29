@@ -1,9 +1,9 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const fs = require("fs");
+import fs from "fs";
 
-app.get("/register", (req, res) => {
-  res.render("reg");
+app.get("/register", (res) => {
+    res.render("reg");
 });
 
 app.post("/register", (req, res) => {

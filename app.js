@@ -13,7 +13,7 @@ let parseData = JSON.parse(data);
 
 const homeRoutes = require("./routes/homeRoutes");
 const loginRoutes = require("./routes/loginRoutes");
-
+const regRoutes = require("./routes/regRoutes");
 
 let alert = {
   message: "",
@@ -28,6 +28,7 @@ app.get("/users", (req, res) => {
 
 app.use("/login", loginRoutes);
 
+app.use("/register", regRoutes);
 
 app.listen(3000, function () {
   console.log("Example app listening on port 3000!");

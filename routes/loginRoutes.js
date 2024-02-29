@@ -1,7 +1,7 @@
-const express = require("express");
+import express from "express";
 const app = express();
 
-app.get("/login", (req, res) => {
+app.get("/login", (_, res) => {
   res.render("login");
 });
 

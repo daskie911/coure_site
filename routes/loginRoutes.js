@@ -1,7 +1,7 @@
 import express from "express";
 const app = express();
 
-app.get("/login", (_, res) => {
+app.get("/", (_, res) => {
   res.render("login");
 });
 

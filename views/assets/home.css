@@ -24,7 +24,28 @@ header {
 h1 {
   font-size: 36px;
   margin-bottom: 10px;
-  animation: slide-up 1s ease-in-out;
+  animation: slide-up 1s ease-in-out, fade-shadow 3s infinite;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-shadow {
+  0% {
+    text-shadow: 0 0 0 white;
+  }
+  50% {
+    text-shadow: 0 0 10px white;
+  }
+  100% {
+    text-shadow: 0 0 0 white;
+  }
 }
 
 @keyframes slide-up {
@@ -39,7 +60,28 @@ h1 {
 h3 {
   font-size: 24px;
   margin-bottom: 20px;
-  animation: fade-in 1s ease-in-out;
+  animation: fade-in 1s ease-in-out, white-shadow 3s infinite;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes white-shadow {
+  0% {
+    text-shadow: 0 0 0 white;
+  }
+  50% {
+    text-shadow: 0 0 10px white;
+  }
+  100% {
+    text-shadow: 0 0 0 white;
+  }
 }
 
 a {
@@ -83,79 +125,77 @@ nav a {
   animation: fade-in 1s ease-in-out;
 }
 
+nav a:hover {
+  font-weight: bold;
+  font-size: larger;
+  animation: grow 0.5s ease-in-out;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 150px; /* Increased height */
+  height: 150px;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   color: white;
-  animation: navbar-animation 1s ease-in-out infinite alternate;
-  transition: height 0.5s ease-in-out; /* Added transition */
 }
 
-@keyframes navbar-animation {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
+/* ill make alert tmrw */
 
-.alert {
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-  color: #721c24;
+/* .alert {
   padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid transparent;
   border-radius: 4px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  display: none;
 }
 
 .alert-success {
   background-color: #d4edda;
-  border-color: #c3e6cb;
   color: #155724;
+  border-color: #c3e6cb;
+  animation-name: success-animation;
 }
 
 .alert-danger {
   background-color: #f8d7da;
-  border-color: #f5c6cb;
   color: #721c24;
+  border-color: #f5c6cb;
+  animation-name: danger-animation;
 }
 
-.alert-dismissible {
-  position: relative;
-  padding-right: 25px;
-  margin-bottom: 10px;
-}
-
-.alert-dismissible .close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  color: inherit;
-}
-
-@keyframes lighting {
+@keyframes success-animation {
   0% {
-    background-color: #f8d7da;
-    box-shadow: none;
-  }
-  50% {
-    background-color: #f8d7da;
-    box-shadow: 0 0 10px 5px #f8d7da;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
   }
   100% {
-    background-color: #f8d7da;
-    box-shadow: none;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
   }
 }
 
-.alert-lighting {
-  animation: lighting 2s infinite;
-}
+@keyframes danger-animation {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  }
+} */
+
+

@@ -1,12 +1,13 @@
-import express from "express";
-const app = express();
-import fs from "fs";
+// regRoutes.js
+const express = require("express");
+const router = express.Router();
+const fs = require("fs");
 
-app.get("/register", (res) => {
-    res.render("reg");
+router.get("/register", (req, res) => { // Fix: Added req parameter
+  res.render("reg");
 });
 
-app.post("/register", (req, res) => {
+router.post("/register", (req, res) => {
   let { email, password, password2 } = req.body;
   console.log(email, password, password2);
   console.log(parseData);
@@ -31,5 +32,8 @@ app.post("/register", (req, res) => {
   } else {
     parseData.users.push({ email, password });
     fs.writeFileSync("db.json", JSON.stringify(parseData, null, 2));
+    res.redirect("/"); // Fix: Redirect after writing to db.json
   }
 });
+
+module.exports = router;

@@ -12,6 +12,12 @@ let data = fs.readFileSync("db.json");
 let parseData = JSON.parse(data);
 
 const homeRoutes = require("./routes/homeRoutes");
+
+app.use((req, res, next) => {
+  res.locals.parseData = parseData;
+  next();
+});
+
 const loginRoutes = require("./routes/loginRoutes");
 const regRoutes = require("./routes/regRoutes");
 

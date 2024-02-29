@@ -1,12 +1,22 @@
-import express from "express";
-const app = express();
+const express = require("express");
+const router = express.Router();
 
-app.get("/", (_, res) => {
+let alert = {
+  message: "",
+  type: "",
+};
+
+router.get("/", (_, res) => {
   res.render("login");
+  alert.message = "";
+  alert.type = "";
 });
 
-app.post("/login", (req, res) => {
+router.post("/", (req, res) => {
   let { email, password } = req.body;
+
+  const parseData = res.locals.parseData;
+
   for (let user of parseData.users) {
     if (user.email === email && user.password === password) {
       alert.type = "success";
@@ -19,3 +29,5 @@ app.post("/login", (req, res) => {
     }
   }
 });
+
+module.exports = router;

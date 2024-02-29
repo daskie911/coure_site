@@ -11,71 +11,23 @@ app.use(express.static(__dirname + "/views"));
 let data = fs.readFileSync("db.json");
 let parseData = JSON.parse(data);
 
+const homeRoutes = require("./routes/homeRoutes");
+const loginRoutes = require("./routes/loginRoutes");
+
+
 let alert = {
   message: "",
   type: "",
 };
 
-app.get("/", (req, res) => {
-  res.render("home", { alert });
-  alert.message = "";
-  alert.type = "";
-});
+app.use("/", homeRoutes);
 
 app.get("/users", (req, res) => {
   res.render("users", { users: data });
 });
 
-app.get("/login", (req, res) => {
-  res.render("login");
-});
+app.use("/login", loginRoutes);
 
-app.post("/login", (req, res) => {
-  let { email, password } = req.body;
-  for (let user of parseData.users) {
-    if (user.email === email && user.password === password) {
-      alert.type = "success";
-      alert.message = "User exists";
-      return res.redirect("/");
-    } else {
-      alert.type = "danger";
-      alert.message = "User does not exist";
-      return res.redirect("/");
-    }
-  }
-});
-
-app.get("/register", (req, res) => {
-  res.render("reg");
-});
-
-app.post("/register", (req, res) => {
-  let { email, password, password2 } = req.body;
-  console.log(email, password, password2);
-  console.log(parseData);
-
-  if (password !== password2) {
-    res.render("reg");
-    return;
-  }
-
-  let userExists = false;
-
-  for (let user of parseData.users) {
-    if (user.email === email) {
-      userExists = true;
-      break;
-    }
-  }
-
-  if (userExists) {
-    res.send("User already exists!");
-    res.redirect("/");
-  } else {
-    parseData.users.push({ email, password });
-    fs.writeFileSync("db.json", JSON.stringify(parseData, null, 2));
-  }
-});
 
 app.listen(3000, function () {
   console.log("Example app listening on port 3000!");

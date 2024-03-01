@@ -178,13 +178,13 @@ nav a:hover {
 
 @keyframes red-shadow {
   0% {
-    text-shadow: 0 0 0 white;
+    text-shadow: 0 0 0 red;
   }
   50% {
-    text-shadow: 0 0 10px white;
+    text-shadow: 0 0 10px red;
   }
   100% {
-    text-shadow: 0 0 0 white;
+    text-shadow: 0 0 0 red;
   }
 }
 
@@ -197,12 +197,12 @@ nav a:hover {
 
 @keyframes green-shadow {
   0% {
-    text-shadow: 0 0 0 white;
+    text-shadow: 0 0 0 green;
   }
   50% {
-    text-shadow: 0 0 10px white;
+    text-shadow: 0 0 10px green;
   }
   100% {
-    text-shadow: 0 0 0 white;
+    text-shadow: 0 0 0 green;
   }
 }

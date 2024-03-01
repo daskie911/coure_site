@@ -155,54 +155,49 @@ nav a:hover {
 }
 
 /* alert */
-
 .alert {
-  animation: fade-in 1s ease-in-out;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  width: fit-content;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.alert.alert-red {
-  background-color: red;
+.success {
+  background-color: #4caf50;
   color: white;
-  text-shadow: 0 0 0 white;
-  animation: red-shadow 3s infinite;
+  animation: shadow-animation 1s infinite alternate;
 }
 
-@keyframes red-shadow {
-  0% {
-    text-shadow: 0 0 0 red;
-  }
-  50% {
-    text-shadow: 0 0 10px red;
-  }
-  100% {
-    text-shadow: 0 0 0 red;
-  }
-}
-
-.alert.alert-green {
-  background-color: green;
+.error {
+  background-color: #f44336;
   color: white;
-  text-shadow: 0 0 0 white;
-  animation: green-shadow 3s infinite;
+  animation: shadow-animation 1s infinite alternate;
 }
 
-@keyframes green-shadow {
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+@keyframes shadow-animation {
   0% {
-    text-shadow: 0 0 0 green;
-  }
-  50% {
-    text-shadow: 0 0 10px green;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
   }
   100% {
-    text-shadow: 0 0 0 green;
+    box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.7);
   }
 }

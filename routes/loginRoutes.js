@@ -7,9 +7,9 @@ let alert = {
 };
 
 router.get("/", (_, res) => {
+  res.render("login", { alert });
   alert.message = "";
   alert.type = "";
-  res.render("login", { alert });
 });
 
 router.post("/", (req, res) => {
@@ -19,15 +19,15 @@ router.post("/", (req, res) => {
 
   for (let user of parseData.users) {
     if (user.email === email && user.password === password) {
-      alert.type = "success";
       alert.message = "User exists";
-      return res.redirect("/");
+      alert.type = "success";
     } else {
-      alert.type = "danger";
       alert.message = "User does not exist";
-      return res.redirect("/");
+      alert.type = "danger";
     }
   }
+
+  res.render("home", { alert });
 });
 
 module.exports = router;

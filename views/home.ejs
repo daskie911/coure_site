@@ -40,23 +40,24 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <% if (alert && alert.type.length > 0) { %>
-      <div class="container">
-        <div class="alert alert-<%= alert.type %> alert-dismissible">
-          <button
-            type="button"
-            class="close"
-            data-dismiss="alert"
-            onclick="this.parentElement.style.display='none';"
-          >
-            &times;
-          </button>
-          <div class="text-center"><strong>Message:</strong> <%= alert.message %></div>
-        </div>
-      </div>
+    <!-- <main>
+      <% if (error) { %>
+      <p class="error"><%= error %></p>
       <% } %>
-    </main>
+
+      <div class="logo">
+        <img src="./assets/image/logo-footer.svg" alt="logo" />
+      </div>
+      <form class="login-system" action="/login" method="post">
+        <label for="login">Логін</label>
+        <input type="text" id="login" name="login" required /><br />
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" required /><br />
+        <div class="button-wrap">
+          <input class="button-wrap__button" type="submit" value="Увійти" />
+        </div>
+      </form>
+    </main> -->
     <footer>
       <p>&copy; 2024 Darknet</p>
     </footer>

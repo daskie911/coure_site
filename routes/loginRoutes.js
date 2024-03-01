@@ -1,33 +1,19 @@
-const express = require("express");
-const router = express.Router();
+const { Router } = require('express')
+const router = new Router()
 
-let alert = {
-  message: "",
-  type: "",
-};
+router.get('/', (req, res) => {
+  res.render('admin', { error: '' })
+})
 
-router.get("/", (_, res) => {
-  res.render("login", { alert });
-  alert.message = "";
-  alert.type = "";
-});
+router.post('/', (req, res) => {
+  const { login, password } = req.body
+  if (login === process.env.LOGIN && password === process.env.PASSWORD) {
+    req.session.user = login
 
-router.post("/", (req, res) => {
-  let { email, password } = req.body;
-
-  const parseData = res.locals.parseData;
-
-  for (let user of parseData.users) {
-    if (user.email === email && user.password === password) {
-      alert.message = "User exists";
-      alert.type = "success";
-    } else {
-      alert.message = "User does not exist";
-      alert.type = "danger";
-    }
+    res.redirect('/')
+  } else {
+    res.render('admin', { error: 'Wrong password or email' })
   }
+})
 
-  res.render("home", { alert });
-});
-
-module.exports = router;
+module.exports = router

@@ -6,11 +6,10 @@ let alert = {
   type: "",
 };
 
-app.get('/', function(req, res) {
-  const isSuccess = true; 
+app.get("/", function (req, res) {
+  const isSuccess = true;
   const message = "User exists";
-  res.render('home', { isSuccess: isSuccess, message: message });
+  res.render("home", { isSuccess: isSuccess, message: message });
 });
-
 
 module.exports = app;

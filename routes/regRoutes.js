@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 
-router.get("/register", (req, res) => { // Fix: Added req parameter
+router.get("/", (req, res) => {
   res.render("reg");
 });
 

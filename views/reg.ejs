@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/assets/style.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      #video-background {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+      }
+    </style>
   </head>
   <body>
-    <h1>OOHOHOHOHOHOHO</h1>
+    <video id="video-background" autoplay loop muted>
+      <source src="sea_-_33194 (1080p).mp4" type="video/mp4" />
+    </video>
+    <h1>Sign Up</h1>
     <form action="/register" method="post">
       <input type="email" name="email" placeholder="Email" required />
       <input type="password" name="password" placeholder="Password" required />
@@ -18,7 +39,7 @@
         required
       />
       <button type="submit">Register</button>
+      <a href="/">Login</a>
     </form>
-    <a href="/">Login</a>
   </body>
 </html>

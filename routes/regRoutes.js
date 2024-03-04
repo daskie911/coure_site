@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
         email,
       });
       await user.save();
-      return res.redirect("/");
+      return res.render("profile", { user });
     }
   } catch (error) {
     console.log(error);

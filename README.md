@@ -4,7 +4,7 @@ This is a web application for a course site built with Express.js and MongoDB.
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/yawn911/course-site.git`
+1. Clone the repository: `git clone https://github.com/yawn911/course_site.git`
 2. Install dependencies: `npm install`
 3. Set up environment variables:
     - Create a `.env` file in the root directory

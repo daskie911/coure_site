@@ -1,7 +1,5 @@
-// regRoutes.js
 const express = require("express");
 const router = express.Router();
-const fs = require("fs");
 
 router.get("/", (req, res) => {
   res.render("reg");
@@ -30,9 +28,7 @@ router.post("/register", (req, res) => {
     res.send("User already exists!");
     res.redirect("/");
   } else {
-    parseData.users.push({ email, password });
-    fs.writeFileSync("db.json", JSON.stringify(parseData, null, 2));
-    res.redirect("/"); // Fix: Redirect after writing to db.json
+    res.redirect("/");
   }
 });
 

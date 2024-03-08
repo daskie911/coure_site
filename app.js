@@ -26,6 +26,8 @@ app.use("/login", loginRoutes);
 
 app.use("/register", regRoutes);
 
+app.use("/profile", profRoutes);
+
 const start = async () => {
   try {
     await mongoose.connect(`${process.env.DB_URL}`);

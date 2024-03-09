@@ -33,3 +33,5 @@ This is a web application for a course site built with Express.js and MongoDB.
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
+
+(￣o￣) . z Z

@@ -1,19 +1,26 @@
-const { Router } = require('express')
-const router = new Router()
+const { Router } = require("express");
+const router = new Router();
+const User = require("../models/User");
 
-router.get('/', (req, res) => {
-  res.render('admin', { error: '' })
-})
+router.get("/", (req, res) => {
+  res.render("login", { error: "" });
+});
 
-router.post('/', (req, res) => {
-  const { login, password } = req.body
-  if (login === process.env.LOGIN && password === process.env.PASSWORD) {
-    req.session.user = login
+router.post("/", async (req, res) => {
+  try {
+    const { password } = req.body;
+    const candidate = await User.findOne({ email });
 
-    res.redirect('/')
-  } else {
-    res.render('admin', { error: 'Wrong password or email' })
+    if (!candidate) {
+      console.log("User not found");
+      return res.redirect("/");
+    } else {
+      console.log("User found");
+      return res.redirect("/");
+    }
+  } catch (error) {
+    console.log(error);
   }
-})
+});
 
-module.exports = router
+module.exports = router;

@@ -8,48 +8,60 @@
   </head>
   <body>
     <header>
-    <h1>Profile</h1>
-    <h2>Welcome to your profile</h2> 
+      <h1>Profile</h1>
+      <h2>Welcome to your profile</h2>
       <a href="/home">Home</a>
       <a href="/">logout</a>
-  </header>
-<main>
-  <section>
-    <h2>Profile</h2>
-    <p>Username
-      <span>username</span>
-    </p>
-    <p>Email
-      <span>example@gmail.com</span>
-    </p>
-  </section>
-  <section class="changePassword">
-    <h2>Change Password</h2>
-    <form action="/profile" method="POST">
-      <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required />
-      </div>
-      <div>
-        <label for="newPassword">New Password</label>
-        <input type="password" id="newPassword" name="newPassword" required />
-      </div>
-      <div>
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required />
-      </div>
-      <button type="submit">Change Password</button>
-    </form>
-  </section>
-  <section>
-    <h2>Delete Account</h2>
-    <form action="/profile" method="POST">
-      <button type="submit" id="dc">Delete Account</button>
-    </form>
-  </section>
-</main>
-<footer>
-  <p>© 2024 DARKNET</p>
-</footer>
+    </header>
+    <main>
+      <section>
+        <h2>Profile</h2>
+        <p>
+          Username
+          <span><%=user.username%></span>
+        </p>
+        <p>
+          Email
+          <span><%=user.email%></span>
+        </p>
+      </section>
+      <section class="changePassword">
+        <h2>Change Password</h2>
+        <form action="/profile" method="POST">
+          <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div>
+            <label for="newPassword">New Password</label>
+            <input
+              type="password"
+              id="newPassword"
+              name="newPassword"
+              required
+            />
+          </div>
+          <div>
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              required
+            />
+          </div>
+          <button type="submit">Change Password</button>
+        </form>
+      </section>
+      <section>
+        <h2>Delete Account</h2>
+        <form action="/profile" method="POST">
+          <button type="submit" id="dc">Delete Account</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>© 2024 DARKNET</p>
+    </footer>
   </body>
 </html>

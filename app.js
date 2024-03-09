@@ -13,19 +13,13 @@ app.use(express.static(__dirname + "/views"));
 const homeRoutes = require("./routes/homeRoutes");
 const loginRoutes = require("./routes/loginRoutes");
 const regRoutes = require("./routes/regRoutes");
+const profRoutes = require("./routes/profRoutes");
 
 const port = process.env.PORT || 3000;
 
 app.use("/", homeRoutes);
-
-app.get("/users", (req, res) => {
-  res.render("users", { users: data });
-});
-
 app.use("/login", loginRoutes);
-
 app.use("/register", regRoutes);
-
 app.use("/profile", profRoutes);
 
 const start = async () => {

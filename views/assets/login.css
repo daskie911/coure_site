@@ -48,3 +48,13 @@ a {
   color: #007bff;
   text-decoration: none;
 }
+
+.error {
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: red;
+  border: 2px solid red;
+  border-radius: 15px;
+}
+

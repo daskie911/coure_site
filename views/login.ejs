@@ -26,6 +26,9 @@
     <video id="video-background" autoplay loop>
       <source src="sea_-_33194 (1080p).mp4" type="video/mp4" />
     </video>
+    <% if (error) { %>
+    <p class="error"><%= error %></p>
+    <% } %>
     <h1>Login</h1>
     <div class="container">
       <form action="/login" method="post">

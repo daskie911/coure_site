@@ -14,6 +14,8 @@ const homeRoutes = require("./routes/homeRoutes");
 const loginRoutes = require("./routes/loginRoutes");
 const regRoutes = require("./routes/regRoutes");
 const profRoutes = require("./routes/profRoutes");
+const addRoutes = require("./routes/addRoutes");
+const showRoutes = require("./routes/showRoutes");
 
 const port = process.env.PORT || 3000;
 
@@ -21,6 +23,8 @@ app.use("/", homeRoutes);
 app.use("/login", loginRoutes);
 app.use("/register", regRoutes);
 app.use("/profile", profRoutes);
+app.use("/add", addRoutes);
+app.use("/showCards", showRoutes);
 
 const start = async () => {
   try {

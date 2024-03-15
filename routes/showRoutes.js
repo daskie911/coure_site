@@ -1,12 +1,15 @@
-const bcrypt = require("bcryptjs");
 const express = require("express");
 const router = express.Router();
-const User = require("../models/User");
+const Card = require("../models/Card");
 
-router.get("/", (req, res) => {
-  res.render("showCards");
+router.get("/", async (req, res) => {
+  try {
+    const cards = await Card.find();
+    res.render("showCards", { cards });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
-
 module.exports = router;
-

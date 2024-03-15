@@ -8,21 +8,14 @@
   <body>
     <header>showCards</header>
     <main>
-      <span>
+      <% cards.forEach(card => { %>
+      <div>
         <h2>Card</h2>
-        <p>
-          Title
-          <span><%=card.title%></span>
-        </p>
-        <p>
-          Description
-          <span><%=card.description%></span>
-        </p>
-        <p>
-          Img
-          <span><%=card.img%></span>
-        </p>
-      </span>
+        <p>Title: <%= card.title %></p>
+        <p>Description: <%= card.description %></p>
+        <p>Image: <img src="<%= card.img %>" alt="Card Image" /></p>
+      </div>
+      <% }); %>
     </main>
   </body>
 </html>

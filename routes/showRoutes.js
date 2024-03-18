@@ -22,4 +22,30 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.get("/:id/edit", async (req, res) => {
+  try {
+    const product = await Card.findById(req.params.id);
+    res.render("cardEdit", { product });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+router.post("/edit", async (req, res) => {
+  try {
+    const { id } = req.body;
+    delete req.body.id;
+    const product = await Card.findById(id);
+
+    Object.assign(product, req.body);
+
+    await product.save();
+    res.redirect("/showCards");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 module.exports = router;

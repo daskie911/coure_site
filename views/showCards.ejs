@@ -15,7 +15,13 @@
         <p>Title: <%= card.title %></p>
         <p>Description: <%= card.description %></p>
         <p>Image: <img src="<%= card.img %>" alt="Image" /></p>
+
         <a href="/showCards/<%= card.id %>">PRESS ME</a>
+        <a
+          class="btn btn-outline-dark mt-auto"
+          href="/showCards/<%= card.id %>/edit?alow=true"
+          >EDIT</a
+        >
       </div>
       <% }); %> <% } else {%>
       <div class="container px-4 px-lg-5 my-5">

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDIT</title>
+  </head>
+  <body>
+    <header><h1>Editig</h1></header>
+    <div class="container">
+      <form action="/showCards/edit" method="post">
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          value="<%= product.title %>"
+        />
+        <input
+          type="text"
+          name="description"
+          placeholder="Description"
+          value="<%= product.description %>"
+        />
+        <input
+          type="text"
+          name="img"
+          placeholder="Img"
+          value="<%= product.img %>"
+        />
+
+        <input type="hidden" name="id" value="<%= product.id %>" />
+        <button type="submit" style="font-weight: bold">Edit</button>
+      </form>
+      <p>
+        Image:
+        <img src="<%= product.img %>" alt="Image" style="height: 400px" />
+      </p>
+    </div>
+  </body>
+</html>

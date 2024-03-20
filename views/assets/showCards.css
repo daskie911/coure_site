@@ -29,6 +29,7 @@ main {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc; /* добавляем рамку */
   margin: 10px;
   padding: 20px;
   width: 300px;
@@ -45,9 +46,9 @@ main {
   margin-bottom: 10px;
 }
 
-.card img {
+img {
   max-width: 100%;
-  height: auto;
+  height: 400px;
   border-radius: 5px;
 }
 
@@ -57,8 +58,9 @@ a {
   margin-top: 10px;
   font-size: 16px;
   text-decoration: none;
-  color: #fff;
-  background-color: #343a40;
+  color: #343a40;
+  background-color: #fff;
+  border: 1px solid #343a40;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
 }
@@ -69,7 +71,7 @@ a.btn-outline-dark {
   border: 1px solid #343a40;
 }
 
-a.btn-outline-dark:hover {
+a:hover {
   background-color: #343a40;
   color: #fff;
 }

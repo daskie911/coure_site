@@ -16,6 +16,7 @@ const regRoutes = require("./routes/regRoutes");
 const profRoutes = require("./routes/profRoutes");
 const addRoutes = require("./routes/addRoutes");
 const showRoutes = require("./routes/showRoutes");
+const favRoutes = require("./routes/favRoutes");
 
 const port = process.env.PORT || 3000;
 
@@ -25,6 +26,7 @@ app.use("/register", regRoutes);
 app.use("/profile", profRoutes);
 app.use("/add", addRoutes);
 app.use("/showCards", showRoutes);
+app.use("/fav", favRoutes);
 
 const start = async () => {
   try {

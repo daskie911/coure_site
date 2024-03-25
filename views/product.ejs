@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/assets/prduct.css" />
+    <link rel="stylesheet" href="/assets/product.css" />
   </head>
   <body>
-    <header>Product</header>
+    <header>Product
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/profile">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
     <main>
       <div>
         <h2>Product</h2>
@@ -18,6 +25,7 @@
       <input type="hidden" name="id" value="<%= product.id %>" />
             <input type="hidden" name="title" value="<%= product.title %>" />
             <button type="submit" class="btn btn-outline-dark mt-auto">Add to cart</button>
+            <a href="/showCards"><button>Back</button></a>
           </form>
         </div>
       </div>

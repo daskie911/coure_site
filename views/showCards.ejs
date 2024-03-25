@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="/assets/showCards.css" />
   </head>
   <body>
-    <header>showCards</header>
+    <header>
+      showCards
+      <nav>
+        <ul>
+          <li><a href="/" class="homeandprofile">Home</a></li>
+          <li><a href="/profile" class="homeandprofile">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
     <main>
       <% if (cards.length > 0) { %> <% cards.forEach(card => { %>
       <div class="card">

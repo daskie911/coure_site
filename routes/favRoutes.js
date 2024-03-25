@@ -9,13 +9,18 @@ router.get("/", async (req, res) => {
 
 router.post("/add", async (req, res) => {
   try {
-    const productId = await Card.findById(req.body.id);
-    const product = await Card.findOne({ productId });
-    const newFavourite = new Favourite({
-      productId,
-      //product
-    });
+    let { productId, title, img } = req.body;
+    let newFavourite = new Favourite({ productId, title, img });
     await newFavourite.save();
+    res.redirect("/fav");
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.post("/remove/:id", async (req, res) => {
+  try {
+    let favouriteId = await Favourite.deleteOne(req.body.id);
     res.redirect("/fav");
   } catch (err) {
     console.log(err);

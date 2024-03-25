@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="/assets/product.css" />
   </head>
   <body>
-    <header>Product
+    <header>
+      Product
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -22,14 +23,15 @@
         <p>Description: <%= product.description %></p>
         <p>Image: <img src="<%= product.img %>" alt="Image" /></p>
       </div>
-      <input type="hidden" name="id" value="<%= product.id %>" />
-            <input type="hidden" name="title" value="<%= product.title %>" />
-            <button type="submit" class="btn btn-outline-dark mt-auto">Add to cart</button>
-            <a href="/showCards"><button>Back</button></a>
-          </form>
-        </div>
-      </div>
-    </section>
+      <form action="/fav/add" method="post">
+        <input type="hidden" name="productId" value="<%= product.id %>" />
+        <input type="hidden" name="title" value="<%= product.title %>" />
+        <input type="hidden" name="img" value="<%= product.img %>" />
+        <button type="submit" class="btn btn-outline-dark mt-auto">
+          Add to cart
+        </button>
+        <a href="/showCards"><button>Back</button></a>
+      </form>
     </main>
   </body>
 </html>

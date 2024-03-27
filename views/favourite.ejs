@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="/assets/favourite.css" />
   </head>
   <body>
-    <h1>Favourite</h1>
+    <header>
+      <h1>Favourite</h1>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/showCards">Your Cards</a></li>
+      </ul>
+    </header>
     <div class="container">
       <% if (favourite.length > 0) { %> <% favourite.forEach(product => { %>
       <div class="card">
@@ -15,19 +21,20 @@
         <p>Title: <%= product.title %></p>
         <p>Image: <img src="<%= product.img %>" alt="Image" /></p>
         <form action="/fav/remove/:id" method="post">
-            <input type="hidden" name="productId" value="<%= product._id %>"/>
-            <button type="submit">DELETE</button>
+          <input type="hidden" name="productId" value="<%= product._id %>" />
+          <button type="submit">DELETE</button>
         </form>
-      <% }); %> <% } else {%>
+      </div>
+      <% }); %> <% } else { %>
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-          <h1 class="display-4 fw-bolder">Opps</h1>
+          <h1 class="display-4 fw-bolder">Oops</h1>
           <p class="lead fw-normal text-white-50 mb-0">
             At this moment, there are not any posts
           </p>
         </div>
       </div>
-      <%}%>
+      <% } %>
     </div>
   </body>
 </html>

@@ -1,0 +1,135 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+}
+
+/* Container Styling */
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Card Styling */
+.card {
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center; /* Center text and content */
+}
+
+/* Image Styling */
+.card img {
+  max-width: 100%; /* Responsive width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below image */
+  margin: 10px auto; /* Center image and add space around */
+  padding: 10px; /* Optional: Adds space inside the border */
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 4px; /* Rounded corners for the border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+}
+
+/* Button Styling */
+button {
+  background-color: #e8491d;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+/* Typography */
+h1,
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Responsive Container for Mobile */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+}
+
+/* Text Centering for No Posts Message */
+.text-center {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.lead {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Add space at the bottom of each card */
+.card + .card {
+  margin-top: 20px;
+}
+
+/* Card title styling */
+.card h2 {
+  color: #e8491d;
+  margin-bottom: 10px;
+}
+
+/* Align DELETE button to the right */
+form {
+  text-align: right;
+}
+
+/* Header Styling */
+header {
+  background-color: #333; /* Dark background for the header */
+  color: #ffffff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+/* Navigation Styling */
+header ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+}
+
+header li {
+  display: inline; /* Display links in a row */
+  margin-right: 20px;
+}
+
+header a {
+  text-decoration: none; /* Remove underline from links */
+  color: #ffffff; /* White text for links */
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: #e8491d; /* Color change on hover */
+}
